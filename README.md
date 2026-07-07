@@ -57,7 +57,7 @@ push to this shared template itself.
 <!-- STATUS BADGES -->
 [![CI](https://github.com/issa-summer-practice-2026/team-03-cluster/actions/workflows/ci.yml/badge.svg)](https://github.com/issa-summer-practice-2026/team-03-cluster/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/issa-summer-practice-2026/team-03-cluster)](https://github.com/issa-summer-practice-2026/team-03-cluster/releases)
-
+..
 ## What it is
 
 - A dark, premium **cluster**: two SVG gauges (tachometer with redline +
