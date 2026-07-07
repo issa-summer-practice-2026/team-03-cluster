@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 // During `npm run dev`, Vite serves the SPA on :5173 and proxies API calls to
 // the Flask backend on :8000 (override with API_TARGET). In production the built
