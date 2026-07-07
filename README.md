@@ -1,5 +1,5 @@
 
-** Apavaloae-Lehonschi David**
+**Apavaloae-Lehonschi David**
 # instrument-cluster
 
 A digital automotive **instrument cluster** — the starter app for the ISSA
@@ -54,10 +54,9 @@ push to this shared template itself.
 > Leave `main` unprotected for now — you'll add branch protection on
 > **Tuesday**, once your CI pipeline exists.
 
-<!-- STATUS BADGES — add your CI + release badges here once the pipeline exists:
-[![CI](https://github.com/<owner>/<repo>/actions/workflows/ci.yml/badge.svg)](../../actions)
-[![Release](https://img.shields.io/github/v/release/<owner>/<repo>)](../../releases)
--->
+<!-- STATUS BADGES -->
+[![CI](https://github.com/issa-summer-practice-2026/team-03-cluster/actions/workflows/ci.yml/badge.svg)](https://github.com/issa-summer-practice-2026/team-03-cluster/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/issa-summer-practice-2026/team-03-cluster)](https://github.com/issa-summer-practice-2026/team-03-cluster/releases)
 
 ## What it is
 
@@ -185,8 +184,8 @@ docs/      getting-started · architecture · workflow  +  backlog/ (exercises)
 Both teammates: add your name and GitHub handle here (and set
 `git config user.email` to your GitHub email so your commits count).
 
-- Name — @handle
-- Name — @handle
+- Apavaloae Lehonschi-David — @davidddpower
+- Damian Stefan-Alexandru — @
 
 ## Your DevOps tasks (this is the week) — TODO
 
