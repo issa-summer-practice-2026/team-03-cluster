@@ -8,7 +8,7 @@ async function jsonOrThrow<T>(res: Response): Promise<T> {
     throw new Error(`request to ${res.url} failed: ${res.status}`);
   }
   return (await res.json()) as T;
-}
+})
 
 export async function getState(): Promise<ClusterState> {
   return jsonOrThrow<ClusterState>(await fetch("/api/state"));
