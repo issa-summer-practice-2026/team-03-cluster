@@ -1,5 +1,7 @@
 
-**Apavaloae-Lehonschi David**
+**Apavaloae-Lehonschi David @david.apavaloae**
+**Damian-Stefan Alexandru @Damiannn712**
+
 # instrument-cluster
 
 A digital automotive **instrument cluster** — the starter app for the ISSA
