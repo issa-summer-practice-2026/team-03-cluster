@@ -1,6 +1,6 @@
 
-**Apavaloae-Lehonschi David @david.apavaloae**
-**Damian-Stefan Alexandru @Damiannn712**
+**Apavaloae-Lehonschi David**
+**Damian-Stefan Alexandru**
 
 # instrument-cluster
 
@@ -187,7 +187,7 @@ Both teammates: add your name and GitHub handle here (and set
 `git config user.email` to your GitHub email so your commits count).
 
 - Apavaloae Lehonschi-David — @davidddpower
-- Damian Stefan-Alexandru — @
+- Damian Stefan-Alexandru — @Damiannn712
 
 ## Your DevOps tasks (this is the week) — TODO
 
