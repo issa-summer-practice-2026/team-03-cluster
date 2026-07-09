@@ -38,6 +38,7 @@ TELLTALE_KEYS = (
     "oil",
     "coolant",
     "low_fuel",
+    "seatbelt",
     "bulb_out",
 )
 
