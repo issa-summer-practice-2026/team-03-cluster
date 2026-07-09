@@ -102,6 +102,10 @@ class TestTelltales:
         assert compute_telltales(RawInput(bulb_out=True))["bulb_out"] is True
         assert compute_telltales(RawInput())["bulb_out"] is False
 
+    def test_oil_lit_from_toggle(self):
+        assert compute_telltales(RawInput(oil=True))["oil"] is True
+
+
     def test_default_is_all_off(self):
         t = compute_telltales(RawInput())
         assert not any(t.values())
