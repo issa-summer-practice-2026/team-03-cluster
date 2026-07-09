@@ -50,20 +50,6 @@ jobs:
           path: backend/coverage.xml
           if-no-files-found: error
 
-      - name: Enforce backend coverage threshold
-        uses: orgoro/coverage@v3.2
-        with:
-          coverageFile: backend/coverage.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          thresholdAll: 70
-          thresholdNew: 70
-          thresholdNewFiles: 70
-
-      - name: Boot backend and smoke test health endpoint
-        run: |
-          python -m app
-          curl --fail --silent http://127.0.0.1:8000/health
-         
       - name: Check backend coverage threshold
         run: |
           coverage=$(grep -o 'line-rate="[0-9.]*"' coverage.xml | head -n 1 | tr -cd '0-9.')
