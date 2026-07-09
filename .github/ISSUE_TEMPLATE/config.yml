@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Collaboration workflow guide
+    url: https://github.com/issa-summer-practice-2026/team-03-cluster/blob/main/docs/workflow.md
+    about: Review the expected issue -> branch -> PR -> review -> merge loop.
