@@ -53,8 +53,9 @@ jobs:
       - name: Check backend coverage threshold
         run: |
           coverage=$(grep -o 'line-rate="[0-9.]*"' coverage.xml | head -n 1 | tr -cd '0-9.')
-          echo "backend line coverage: ${coverage}%"
-          awk -v c="$coverage" 'BEGIN { if (c + 0 < 70) exit 1 }'
+          percent=$(awk -v c="$coverage" 'BEGIN { printf "%.2f", c * 100 }')
+          echo "backend line coverage: ${percent}%"
+          awk -v p="$percent" 'BEGIN { if (p + 0 < 70) exit 1 }'
 
       - name: Boot backend and smoke test health endpoint
         run: |
