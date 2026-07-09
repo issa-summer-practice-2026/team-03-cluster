@@ -41,7 +41,7 @@ jobs:
         run: ruff check .
 
       - name: Test backend with coverage
-        run: pytest --cov=app --cov-report=xml
+        run: pytest --cov=app --cov-report=xml --cov-report=term-missing
 
       - name: Upload backend coverage artifact
         uses: actions/upload-artifact@v4
@@ -50,24 +50,21 @@ jobs:
           path: backend/coverage.xml
           if-no-files-found: error
 
+      - name: Check backend coverage threshold
+        run: |
+          coverage=$(grep -o 'line-rate="[0-9.]*"' coverage.xml | head -n 1 | tr -cd '0-9.')
+          percent=$(awk -v c="$coverage" 'BEGIN { printf "%.2f", c * 100 }')
+          echo "backend line coverage: ${percent}%"
+          awk -v p="$percent" 'BEGIN { if (p + 0 < 70) exit 1 }'
+
       - name: Boot backend and smoke test health endpoint
         run: |
           HOST=127.0.0.1 PORT=8000 python -m app > /tmp/cluster-backend.log 2>&1 &
-          APP_PID=$!
-          for attempt in {1..20}; do
-            if curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json; then
-              break
-            fi
-            if ! kill -0 "$APP_PID" 2>/dev/null; then
-              echo "Backend process exited before the health check completed." >&2
-              cat /tmp/cluster-backend.log >&2
-              exit 1
-            fi
+          for i in {1..20}; do
+            curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json && break
             sleep 1
           done
           curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json
-          kill "$APP_PID"
-          wait "$APP_PID" 2>/dev/null || true
 
   frontend:
     name: frontend

@@ -1,0 +1,24 @@
+name: Ops task
+description: CI, release, branch protection, docs, or repository maintenance
+title: "ops: "
+labels:
+  - devops
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for repository maintenance work that affects collaboration, CI, or delivery.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What needs to change and why?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must be true once the task is complete?
+    validations:
+      required: true
