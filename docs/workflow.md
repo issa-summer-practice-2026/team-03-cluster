@@ -7,20 +7,6 @@ review → green CI → merge** loop is the point.
 > Golden rule: **`main` only changes through a reviewed, green pull request.**
 > You never push to `main`, and you don't merge your own PR.
 
-## Repository guardrails
-
-The repository now includes the collaboration scaffolding that supports the loop:
-
-- Issue forms under [.github/ISSUE_TEMPLATE](../.github/ISSUE_TEMPLATE/) for backlog work and ops tasks.
-- A pull-request template at [.github/pull_request_template.md](../.github/pull_request_template.md).
-- CODEOWNERS at [.github/CODEOWNERS](../.github/CODEOWNERS) so reviews are requested automatically.
-- Auto-labeling with [.github/labeler.yml](../.github/labeler.yml) and [.github/workflows/auto-labeler.yml](../.github/workflows/auto-labeler.yml).
-- Dependabot config at [.github/dependabot.yml](../.github/dependabot.yml) for weekly updates.
-- A PR-title quality check in [.github/workflows/pr-quality.yml](../.github/workflows/pr-quality.yml).
-- Release-note grouping in [.github/release.yml](../.github/release.yml).
-
-Use PR titles that start with a conventional type such as `feat:`, `fix:`, `docs:`, or `chore:` so the automation can validate them and build release notes cleanly.
-
 ## The loop, once
 
 1. **Open an issue.** Pick an item from [backlog/](backlog/). Create a GitHub

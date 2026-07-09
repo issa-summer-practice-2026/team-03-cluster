@@ -61,22 +61,9 @@ jobs:
 
       - name: Boot backend and smoke test health endpoint
         run: |
-          HOST=127.0.0.1 PORT=8000 python -m app > /tmp/cluster-backend.log 2>&1 &
-          APP_PID=$!
-          for attempt in {1..20}; do
-            if curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json; then
-              break
-            fi
-            if ! kill -0 "$APP_PID" 2>/dev/null; then
-              echo "Backend process exited before the health check completed." >&2
-              cat /tmp/cluster-backend.log >&2
-              exit 1
-            fi
-            sleep 1
-          done
-          curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json
-          kill "$APP_PID"
-          wait "$APP_PID" 2>/dev/null || true
+          python -m app
+          curl --fail --silent http://127.0.0.1:8000/health
+         
 
   frontend:
     name: frontend
