@@ -1,0 +1,8 @@
+# Default owners for repository changes
+* @davidddpower
+
+# Reviewers for automation and workflow changes
+.github/ @davidddpower
+/docs/ @davidddpower
+backend/ @davidddpower
+frontend/ @davidddpower

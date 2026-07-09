@@ -1,0 +1,44 @@
+name: Backlog task
+description: Track one backlog item from docs/backlog
+title: "feat: "
+labels:
+  - backlog
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for guided changes from [docs/backlog](../../docs/backlog/README.md).
+  - type: input
+    id: backlog
+    attributes:
+      label: Backlog source
+      description: Which backlog document or exercise is this issue for?
+      placeholder: docs/backlog/01-oil-telltale.md
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the change in one short paragraph.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List the concrete outcomes that must be true for this issue to be done.
+      placeholder: |
+        - Implement the requested behavior
+        - Add or update tests
+        - Open a PR that closes this issue
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Team workflow
+      options:
+        - label: I have linked the relevant backlog item
+        - label: I have split the work into one issue per change
+        - label: I will open a PR that closes this issue
