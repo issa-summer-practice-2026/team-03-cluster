@@ -64,6 +64,20 @@ jobs:
           python -m app
           curl --fail --silent http://127.0.0.1:8000/health
          
+      - name: Check backend coverage threshold
+        run: |
+          coverage=$(grep -o 'line-rate="[0-9.]*"' coverage.xml | head -n 1 | tr -cd '0-9.')
+          echo "backend line coverage: ${coverage}%"
+          awk -v c="$coverage" 'BEGIN { if (c + 0 < 70) exit 1 }'
+
+      - name: Boot backend and smoke test health endpoint
+        run: |
+          HOST=127.0.0.1 PORT=8000 python -m app > /tmp/cluster-backend.log 2>&1 &
+          for i in {1..20}; do
+            curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json && break
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:8000/health >/tmp/health.json
 
   frontend:
     name: frontend
