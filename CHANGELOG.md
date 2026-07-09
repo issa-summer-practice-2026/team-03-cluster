@@ -7,7 +7,11 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 > During the week, your release automation will generate release notes from your
 > merged pull requests. Keep this file as the human-readable history.
 
-## [Unreleased]\r\n- Note from A\r\n\r\n## [0.1.0] - 2026-07-05
+## [Unreleased]
+- Note from B
+- Note from A
+
+## [0.1.0] - 2026-07-05
 ### Added
 - Initial `instrument-cluster` starter.
 - Frontend: React + TypeScript (Vite) — SVG tachometer (with redline) and
