@@ -1,6 +1,7 @@
 
 **Apavaloae-Lehonschi David**
 **Damian-Stefan Alexandru**
+
 # instrument-cluster
 
 A digital automotive **instrument cluster** — the starter app for the ISSA
@@ -186,7 +187,7 @@ Both teammates: add your name and GitHub handle here (and set
 `git config user.email` to your GitHub email so your commits count).
 
 - Apavaloae Lehonschi-David — @davidddpower
-- Damian Stefan-Alexandru — @
+- Damian Stefan-Alexandru — @Damiannn712
 
 ## Your DevOps tasks (this is the week) — TODO
 
